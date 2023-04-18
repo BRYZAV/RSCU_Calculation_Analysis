@@ -93,7 +93,7 @@ def RSCU():
             df_all = pd.concat(lst)
             df_all.to_csv(files + "_RSCU.csv", index = False, header=True)
             lst.clear()
-            #print(df_all)
+            
 
 
         elif files.startswith(tuple(Ala_lst)):
@@ -128,7 +128,7 @@ def RSCU():
             df_all = pd.concat(lst)
             df_all.to_csv(files + "_RSCU.csv", index = False, header=True)
             lst.clear()
-            #print(df_all)
+            
 
         elif files.startswith(tuple(yeast_lst)):
             codon_csv_Table = pd.read_csv(files)
@@ -141,7 +141,7 @@ def RSCU():
             df_all = pd.concat(lst)
             df_all.to_csv(files + "_RSCU.csv", index = False, header=True)
             lst.clear()
-            #print(df_all)
+            
 
 
 if __name__ == '__main__':
