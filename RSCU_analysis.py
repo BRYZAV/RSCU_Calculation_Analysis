@@ -67,7 +67,7 @@ def RSCU():
                 if codon == ['TTA', 'TTG', 'CTT', 'CTC', 'CTA']:
                     test_codon_table = codon_csv_Table.loc[codon_csv_Table["Codon"].isin(codon)]
                     test_codon_table = test_codon_table.drop(["Amino acid","Frequency","Percentage"], axis=1)
-                    average_codon_table = test_codon_table.groupby(['Sequence'], as_index=False).agg(Sum = ('Codon Count','sum'))#.sum()
+                    average_codon_table = test_codon_table.groupby(['Sequence'], as_index=False).agg(Sum = ('Codon Count','sum'))
 
                     merged = test_codon_table.merge(average_codon_table)
                     merged['RSCU'] = (merged['Codon Count'] / merged['Sum']) * len(codon)
@@ -76,7 +76,7 @@ def RSCU():
                 elif codon == ['AGT', 'AGC', 'TCT', 'TCC', 'TCA', 'TCG', 'CTG']:
                     test_codon_table = codon_csv_Table.loc[codon_csv_Table["Codon"].isin(codon)]
                     test_codon_table = test_codon_table.drop(["Amino acid","Frequency","Percentage"], axis=1)
-                    average_codon_table = test_codon_table.groupby(['Sequence'], as_index=False).agg(Sum = ('Codon Count','sum'))#.sum()
+                    average_codon_table = test_codon_table.groupby(['Sequence'], as_index=False).agg(Sum = ('Codon Count','sum'))
 
                     merged = test_codon_table.merge(average_codon_table)
                     merged['RSCU'] = (merged['Codon Count'] / merged['Sum']) * len(codon)
@@ -102,7 +102,7 @@ def RSCU():
                 if codon == ['TTA', 'TTG', 'CTT', 'CTC', 'CTA']:
                     test_codon_table = codon_csv_Table.loc[codon_csv_Table["Codon"].isin(codon)]
                     test_codon_table = test_codon_table.drop(["Amino acid","Frequency","Percentage"], axis=1)
-                    average_codon_table = test_codon_table.groupby(['Sequence'], as_index=False).agg(Sum = ('Codon Count','sum'))#.sum()
+                    average_codon_table = test_codon_table.groupby(['Sequence'], as_index=False).agg(Sum = ('Codon Count','sum'))
 
                     merged = test_codon_table.merge(average_codon_table)
                     merged['RSCU'] = (merged['Codon Count'] / merged['Sum']) * len(codon)
@@ -111,7 +111,7 @@ def RSCU():
                 elif codon == ['GCT', 'GCC', 'GCA', 'GCG', 'CTG']:
                     test_codon_table = codon_csv_Table.loc[codon_csv_Table["Codon"].isin(codon)]
                     test_codon_table = test_codon_table.drop(["Amino acid","Frequency","Percentage"], axis=1)
-                    average_codon_table = test_codon_table.groupby(['Sequence'], as_index=False).agg(Sum = ('Codon Count','sum'))#.sum()
+                    average_codon_table = test_codon_table.groupby(['Sequence'], as_index=False).agg(Sum = ('Codon Count','sum'))
 
                     merged = test_codon_table.merge(average_codon_table)
                     merged['RSCU'] = (merged['Codon Count'] / merged['Sum']) * len(codon)
