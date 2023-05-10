@@ -2,8 +2,6 @@ if (!require("ggplot2")) install.packages("ggplot2"); library(ggplot2)
 
 if (!require("reshape2")) install.packages("reshape2"); library(reshape2)
 
-theme_set(theme_classic())
-
 if (!require("dplyr")) install.packages("dplyr"); library(dplyr)
 
 if (!require("readxl")) install.packages("readxl"); library(readxl)
@@ -39,8 +37,8 @@ codvs <- c() #empty list for codon labels (AAA vs AAC)
 rSqr <- c() #empty list for r squared
 adSqr <- c() #empty list for adjusted r squared
 
+#Run possibly to bypass any errors
 pgls.possible=possibly(.f=pgls, otherwise=NULL)
-
 
 #STarting on the Features file
 #When doing it forreal change to 4
@@ -51,8 +49,6 @@ while(index <= 23) {
   #Running agaonst RSCU Files
   #When doing it foreal change to 3
   column <- 3
-  
-  
   
   
   while(column <= 66) {
@@ -151,5 +147,5 @@ while(index <= 23) {
 }
 
 Features_df <- data.frame(features_vs_codon=codvs, slope=coeff, p_value=pvalue, lambda=lam, r_squared=rSqr, adusted_r_squared=adSqr)
-write.csv(Features_df,"RSCU_UNTRANSFORMED_FEATURES_profile.csv", row.names=FALSE)
+write.csv(Features_df,"RSCU_FEATURES_profile.csv", row.names=FALSE)
 

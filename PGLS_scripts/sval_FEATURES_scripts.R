@@ -2,8 +2,6 @@ if (!require("ggplot2")) install.packages("ggplot2"); library(ggplot2)
 
 if (!require("reshape2")) install.packages("reshape2"); library(reshape2)
 
-theme_set(theme_classic())
-
 if (!require("dplyr")) install.packages("dplyr"); library(dplyr)
 
 if (!require("readxl")) install.packages("readxl"); library(readxl)
@@ -156,5 +154,5 @@ while(index <= 15) {
 }
 
 Features_df <- data.frame(features_vs_codon=codvs, slope=coeff, p_value=pvalue, lambda=lam, r_squared=rSqr, adusted_r_squared=adSqr)
-write.csv(Features_df,"tRNA_repeats_UNTRANSFORMED_FEATURES_profile_CORRECTED.csv", row.names=FALSE)
+write.csv(Features_df,"tRNA_repeats_FEATURES_profile_CORRECTED.csv", row.names=FALSE)
 
